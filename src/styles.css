@@ -5,8 +5,8 @@ body {
   min-height: 100vh;
   height: 100%;
   background-image:
-      linear-gradient(rgba(255, 180, 53, 0.9), rgba(254, 211, 132, 0.2)),
-      url('./assets/images/img-01.jpg');
+      linear-gradient(rgba(255, 181, 53, 0.663), rgba(74, 29, 136, 0.900)),
+      url('./assets/images/background.gif');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

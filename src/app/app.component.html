@@ -1,48 +1,71 @@
-<div class="d-flex justify-content-center align-items-center vh-100">
-  <div class="card shadow"
-    style="max-width: 400px; background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px;">
-    <div class="text-center">
-      <!-- Logo -->
-      <img src="/assets/icons/trkme.png" alt="TrackMe" class="img-fluid mb-3" style="width: 100px; height: 100px;">
-      <!-- Title -->
-      <h5 class="fw-bold mb-4">TrackMe Chile</h5>
-    </div>
-    <!-- Formulario -->
-    <form (ngSumbit)="getHelp()">
-      <!-- Usuario -->
-      <div class="mb-3">
-        <div class="input-group">
-          <span class="input-group-text bg-white"><i class="fa fa-user text-muted"></i></span>
-          <input type="text" class="form-control" placeholder="Usuario" name="username" disabled>
-        </div>
-      </div>
-      <!-- Contraseña -->
-      <div class="mb-3">
-        <div class="input-group">
-          <span class="input-group-text bg-white"><i class="fa fa-lock text-muted"></i></span>
-          <input type="password" class="form-control" placeholder="Contraseña" name="pass" disabled>
-        </div>
-      </div>
-      <!-- Botón de Ingreso -->
-      <div class="d-grid">
-        <button class="btn btn-dark" type="submit">Ingresar</button>
-      </div>
-      <!-- Opciones adicionales -->
-      <div class="text-center mt-3">
-        <a style="cursor: pointer;" (click)="getHelp()" class="text-decoration-none text-muted">Olvidaste
-          usuario/contraseña ?</a>
-      </div>
-      <div class="text-center mt-4">
-        <a style="cursor: pointer;" (click)="getHelp()" class="text-decoration-none">
-          Contactenos <i class="fa fa-long-arrow-right"></i>
-        </a>
-      </div>
-    </form>
+<!-- Preloader -->
+<div *ngIf="isLoading" class="d-flex justify-content-center align-items-center vh-100 bg-dark text-white">
+  <div class="text-center">
+    <img src="/assets/images/loading.gif" alt="Cargando..." class="mb-3" style="max-width: 150px;" />
+    <p>Cargando recursos...</p>
+    <!-- <div class="spinner-border text-light" role="status">
+      <span class="visually-hidden">Cargando...</span>
+    </div> -->
   </div>
 </div>
 
-<div class="help">
-  <button (click)="getHelp()" class="btn btn-warning">
-    <i class="bi bi-info-circle-fill"></i>
-  </button>
+<!-- Aplicación Principal -->
+<div *ngIf="!isLoading">
+  <div class="d-flex justify-content-center align-items-center vh-100 animate__animated animate__bounceInLeft">
+    <div class="login card shadow">
+      <div class="text-center mb-2">
+        <!-- Logo -->
+        <img src="/assets/icons/trkme.png" alt="TrackMe" class="logo img-fluid mb-3">
+        <!-- Title -->
+        <h5 class="fw-bold mb-4 mt-3 logo_title textura-texto">TrackMe<img class="flag" src="/assets/images/chile.png"
+            alt="Chile"></h5>
+
+      </div>
+      <!-- Formulario -->
+      <form (ngSumbit)="getHelp()">
+        <!-- Usuario -->
+        <div class="mb-4">
+          <div class="input-group">
+            <span class="input-group-text bg-white"><i class="bi bi-person-circle text-muted"></i></span>
+            <input type="text" class="form-control" placeholder="Usuario" name="username" disabled>
+          </div>
+        </div>
+        <!-- Contraseña -->
+        <div class="mb-4">
+          <div class="input-group">
+            <span class="input-group-text bg-white"><i class="bi bi-key-fill text-muted"></i></span>
+            <input type="password" class="form-control" placeholder="Contraseña" name="pass" disabled>
+          </div>
+        </div>
+        <!-- Botón de Ingreso -->
+        <div class="d-grid">
+          <button class="btn btn-success fuente_botones" type="submit">INGRESAR</button>
+        </div>
+        <!-- Opciones adicionales -->
+        <div class="text-center mt-4">
+          <a style="cursor: pointer; color: white !important;" (click)="getHelp()"
+            class="text-decoration-none text-muted">Olvidaste
+            usuario/contraseña ?</a>
+        </div>
+        <div class="text-center mt-4">
+          <a style="cursor: pointer;" (click)="getHelp()" class="text-decoration-none">
+            Contactenos <i class="fa fa-long-arrow-right"></i>
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="help">
+    <button (click)="getHelp()" class="btn btn-success">
+      <i class="bi bi-info-circle-fill"></i>
+    </button>
+  </div>
+
+  <div *ngIf="!isLoading" class="mute">
+    <button class="btn btn-success" (click)="toggleMute()">
+      <i class="bi" [ngClass]="{'bi-volume-mute': isMuted, 'bi-volume-up': !isMuted}"></i>
+    </button>
+  </div>
+
 </div>

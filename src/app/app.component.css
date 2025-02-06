@@ -1,3 +1,89 @@
+.logo_title {
+  font-family: "Bowlby One SC", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 54px;
+  color: #fec859 !important;
+  text-shadow: 0px 0px 15px #fa448c;
+
+}
+
+a, h2, h3, h4, h5{
+  letter-spacing: 1px;
+  font-family: Bangers;
+  font-style: normal;
+}
+
+.textura-texto {
+  font-size: 48px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.9) !important;  /* El color del texto es transparente */
+  background-size: cover; /* Ajusta el tamaño de la textura */
+  background-clip: text; /* Aplica el fondo al texto */
+  -webkit-background-clip: text; /* Compatibilidad con navegadores webkit */
+  background-image: url('/assets/images/texture_1.jpg'); /* Imagen de textura */
+}
+
+.logo{
+  width: 120px;
+  height: 120px;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 10px 5px #222);
+}
+
+.flag{
+  position: absolute;
+  right:95px;
+  top: 130px;
+  width: 50px;
+  height: 50px;
+  rotate: 10deg;
+  -webkit-filter: drop-shadow(5px 5px 7px #222);
+  filter: drop-shadow(5px 5px 7px #222);
+
+}
+
+.fuente_botones {
+  font-family: "Bangers", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+
+.login {
+  max-width: 600px;
+  position: relative;
+  background-color:  rgba(74, 29, 136, 0.400); /* Color sólido detrás */
+  padding: 45px;
+  border-radius: 20px;
+  border: 4px outset #fec859;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.login::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/images/login.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.4; /* Transparencia de la imagen */
+  z-index: -1;
+}
+
+/*
+background-color: #4a1d88b2 !important;
+color: #fec859;
+*/
+
+
 .help {
   position: fixed;
   bottom: 20px;
@@ -5,4 +91,70 @@
   z-index: 1000;
   font-size: 16px;
   padding: 10px 20px;
+}
+
+.mute {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+/* Estilo del Preloader */
+.vh-100 {
+  height: 100vh !important;
+}
+
+.bg-dark {
+  background-color: #000 !important;
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+
+
+/* Animacion titulo */
+.logo_title{
+  line-height:1;
+  /* -webkit-transform: rotateX(25deg) rotateY(20deg) rotateZ(-3deg);
+  transform: rotateX(25deg) rotateY(20deg) rotateZ(-3deg); */
+  -webkit-animation: anim 3s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count:infinite;
+  animation: anim 3s;
+  animation-timing-function: linear;
+  animation-iteration-count:infinite;
+}
+
+@-webkit-keyframes anim {
+    0%{text-shadow:-6px 4px 11px red;}
+    10% {text-shadow:4px -6px 11px green;}
+    20% {text-shadow:-9px 4px 11px blue;}
+    30% {text-shadow:4px -6px 11px #fa448c;}
+    40% {text-shadow:-8px 4px 11px orange;}
+    50% {text-shadow:4px 5px 11px purple;}
+    60% {text-shadow:-6px 4px 11px brown;}
+    70% {text-shadow:4px 7px 11px pink;}
+    80% {text-shadow:-9px -4px 11px lime;}
+    90% {text-shadow:4px -6px 11px cyan;}
+    100% {text-shadow:-9px 4px 11px teal;}
+}
+
+@keyframes anim {
+    0%{text-shadow:-6px 4px 11px red;}
+    10% {text-shadow:4px -6px 11px green;}
+    20% {text-shadow:-9px 4px 11px blue;}
+    30% {text-shadow:4px -6px 11px #fa448c;}
+    40% {text-shadow:-8px 4px 11px orange;}
+    50% {text-shadow:4px 5px 11px purple;}
+    60% {text-shadow:-6px 4px 11px brown;}
+    70% {text-shadow:4px 7px 11px pink;}
+    80% {text-shadow:-9px -4px 11px lime;}
+    90% {text-shadow:4px -6px 11px cyan;}
+    100% {text-shadow:-9px 4px 11px teal;}
 }
